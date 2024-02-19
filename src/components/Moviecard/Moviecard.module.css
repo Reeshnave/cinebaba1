@@ -1,0 +1,10 @@
+
+  .tittle{
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+  }
+  .moviecard img{
+    width: 100%;
+    list-style: none;
+}

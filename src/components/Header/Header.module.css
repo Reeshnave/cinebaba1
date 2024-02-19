@@ -1,0 +1,34 @@
+
+  header{
+    background-color: rgb(43,0,128);
+    color:white;
+    height: 72px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }.logo{
+    width: 26px;
+    height:26px;
+    background-color: rgb(255,162,0);
+    border-radius: 50%;
+   margin-right: 0.75rem;
+  }
+  .logooo{
+    display: flex;
+    flex-direction: row;
+    align-items: ce;
+  }
+  nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    grid-gap:1.5rem;
+  }
+  nav a{
+    color: white;
+    text-decoration: none;
+  }
+  

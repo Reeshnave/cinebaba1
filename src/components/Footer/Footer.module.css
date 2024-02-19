@@ -1,0 +1,9 @@
+.end{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    color: white;
+    padding : 2rem 1rem ;
+    background-color: rgb(19, 18, 18);
+
+}

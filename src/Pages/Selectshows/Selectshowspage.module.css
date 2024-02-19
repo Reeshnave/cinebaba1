@@ -1,0 +1,31 @@
+.ulsextion{
+    display: flex;
+    flex-direction: row;
+    grid-gap: 4rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    
+}.lisections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(243, 232, 78);
+    padding-left: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-right: 1rem;
+    border:rgb(211, 200, 49) 1px solid;
+    
+}.container{
+    width:1240px;
+
+    padding-top: 44px;
+ margin-right: auto;
+ margin-left: auto;
+}
+.sizeh2{
+    font-size: 3rem;
+}.linksyte{
+    list-style: none;
+    text-decoration: none;
+}

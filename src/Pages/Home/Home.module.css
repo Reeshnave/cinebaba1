@@ -1,0 +1,17 @@
+
+
+.container{
+    width: 1240px;
+    margin-left: auto;
+    margin-right:auto;
+    padding-top: 55px;
+  }
+  
+  
+  .movielist{
+    list-style: none;
+    margin-top: 2rem;
+    display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     grid-gap: 1rem;
+  }

@@ -1,0 +1,13 @@
+.tierrows{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}.tirelists{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}.tirelists h3{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgb(240, 237, 237);
+}
