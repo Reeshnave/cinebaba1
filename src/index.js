@@ -5,6 +5,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
+import store from './store/store'
+import { Provider } from 'react-redux'
+
+
 
 import reportWebVitals from './reportWebVitals';
 import RootLayout from './routes/RootLayout';
@@ -14,6 +18,8 @@ import Movie,{loader as  singlemovieloader} from './Pages/Movie/Movie';
 import MoviesPage from './Pages/Moviespage/MoviesPage';
 import Selectshowpage,{loader as selectshowloader} from './Pages/Selectshows/Selectshowpage';
 import Selectseat,{loader as selectseatloader} from './Pages/selectseat/Selectseat';
+import BookingSummary from './Pages/BookingSummary/BookingSummary';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +49,10 @@ const router = createBrowserRouter([
         path :'/select-seat/:showId',
         element:<Selectseat/>,
         loader : selectseatloader
+      },
+      {
+        path :'/booking-summary',
+        element:<BookingSummary/>
       }
     ]
   },
@@ -53,7 +63,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+<Provider store={store}><RouterProvider router={router} /></Provider>
+   
   </React.StrictMode>
 );
 

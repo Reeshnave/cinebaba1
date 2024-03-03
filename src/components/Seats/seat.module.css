@@ -16,3 +16,7 @@
     color: white;
     cursor: pointer;
 }
+.Selected{
+    background-color: rgb(44, 185, 44);
+    color: white;
+}

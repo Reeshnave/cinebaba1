@@ -14,3 +14,14 @@
     max-width: 320px;
     border:  1px solids skyblue;
 }
+.checkoutButton{
+    background-color: rgb(225, 92, 119);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease-in;
+}
+.checkoutButton:hover{
+    background-color: rgb(255, 134,154);;
+}
