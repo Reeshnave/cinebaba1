@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import styles from './BookingSummary.module.css'
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+
+
 function BookingSummary(props) {
+    const [loader,setLoader] = useState(false)
     const selectedSeats =useSelector(state=>state.screen.selectedSeats)
     const totalPrice = useSelector(state=>state.screen.totalPrice)
+    const show =useSelector(state=>state.screen.selectedShow)
    
      const handleSubmit= (e)=>{
      e.preventDefault(); 
+     setLoader(true)
      const form = e.target
      const email= form['email'].value
      const phone = form['phone'].value
      const bookingPayload = {
         email :email,
         phone :phone,
-        selectedSeats: selectedSeats
+        selectedSeats: selectedSeats,
+        show:show
      }
+     console.log(bookingPayload)
+      axios.post('http://localhost:3000/bookings',bookingPayload)
+      .then(res=>{
+        setLoader(false)
+        console.log(res)
+      })
+      .catch(err=>{
+        setLoader(false)
+        console.log(err)
+      })
      }
     return (
         <main className={styles.bookingmain}>

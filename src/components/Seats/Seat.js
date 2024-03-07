@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import { selectSeat } from '../../feature/screen/screenSlice';
+import { deselectedSeat, selectSeat } from '../../feature/screen/screenSlice';
 import styles from './seat.module.css';
 
 function Seat(props) {
@@ -13,12 +13,14 @@ function Seat(props) {
 
     function handleSelect(){
      
-      dispatch(selectSeat({rowName:props.rowName,seatnumber:seatnumber}))
+     
       if(status === 'avalible'){
       setStatus('selected')
+      dispatch(selectSeat({rowName:props.rowName,seatnumber:seatnumber}))
       }
       else{
         setStatus('avalible')
+        dispatch(deselectedSeat({rowName:props.rowName,seatnumber:seatnumber}))
       }
     }
     return (

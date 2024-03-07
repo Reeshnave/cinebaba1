@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { act } from '@testing-library/react'
 
 export const screenSlice = createSlice(
     {
@@ -25,12 +26,36 @@ export const screenSlice = createSlice(
                 })
             })
         },
+        deselectedSeat:(state,action)=>{
+            const deselectedSeat= action.payload
+            state.selectedSeats = state.selectedSeats.filter(selectedSeat=>{
+                if(selectedSeat.rowName===deselectedSeat.rowName && selectedSeat.seatnumber ===deselectedSeat.seatnumber)
+                {
+                    
+
+                }
+                else{
+                    return selectedSeat
+                }
+            })
+            state.tiers.map((tier)=>{
+                tier.rows.map((row)=>{
+                    if(row.name === action.payload.rowName){
+                        const price =tier.price
+                        state.totalPrice= state.totalPrice-price
+                    }
+                })
+            })
+          
+
+
+        },
         selectShow:(state,action)=>{
             state.selectedShow=action.payload
         }
 
     }
-    }
+}
 )
- export const {addTiers,selectSeat,selectShow} = screenSlice.actions
+ export const {addTiers,selectSeat,selectShow,deselectedSeat} = screenSlice.actions
  export default screenSlice.reducer

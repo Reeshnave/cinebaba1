@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { Navigate, useNavigate } from "react-router-dom";
 import styles from './Selectseat.module.css'
 import Tier from '../../components/Tier/Tier';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -15,6 +16,7 @@ export async function loader({params}) {
     return{show,showId}
 }
 function Selectseat(props) {
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     const {show,showId} = useLoaderData()
     const screen =show.screen
@@ -28,6 +30,7 @@ function Selectseat(props) {
     },[])
     const handleSeatConfirmation = ()=>{
           dispatch(selectShow(showId))
+          navigate('/booking-summary')
     }
      
 
@@ -44,7 +47,7 @@ function Selectseat(props) {
 
             </ul>
             <div className={styles.screendiv}></div>
-            <button onClick={handleSeatConfirmation} className={styles.checkoutButton} to="/booking-summary">Pay Rs {totalPrice}</button>
+            <button onClick={handleSeatConfirmation} className={styles.checkoutButton} >Pay Rs {totalPrice}</button>
         </main>
     );
 }
